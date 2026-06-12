@@ -10,7 +10,7 @@
 
 ## NeoVim
 
-Legacy config. Not Lua. Uses `init.vim`.
+Simple nvim config
 
 ## Use
 

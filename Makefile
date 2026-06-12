@@ -1,7 +1,12 @@
+ROOT := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+
+print-root:
+	@echo $(ROOT)
+
 sync:
-	cp -r ~/.config/hypr ./hypr
-	cp -r ~/.config/nvim ./nvim
+	rsync -a ~/.config/hypr/ $(ROOT)/hypr/
+	rsync -a ~/.config/nvim/ $(ROOT)/nvim/
 
 apply:
-	cp -r ./hypr ~/.config/
-	cp -r ./nvim ~/.config/
+	cp -r $(ROOT)/hypr ~/.config/
+	cp -r $(ROOT)/nvim ~/.config/
